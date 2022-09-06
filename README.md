@@ -1,6 +1,6 @@
 # WoW Beta Map
 
-Temporary workaround until world map localization has been complete.
+Temporary workaround until world map localization is complete.
 
 ## Usage
 
