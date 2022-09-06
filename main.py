@@ -102,14 +102,12 @@ class MainWindow(QMainWindow):
             expectedWidth = int(height * 3 / 2)
             marginLeft = (width - expectedWidth) // 2
             marginRight = width - expectedWidth - marginLeft
-            # self.zoneMapWidget.resize(QSize(expectedWidth, height))
             self.zoneMapWidget.setContentsMargins(
                 QMargins(marginLeft, 0, marginRight, 0))
         else:
             expectedHeight = int(width * 2 / 3)
             marginTop = (height - expectedHeight) // 2
             marginBottom = height - expectedHeight - marginTop
-            # self.zoneMapWidget.resize(QSize(width, expectedHeight))
             self.zoneMapWidget.setContentsMargins(
                 QMargins(0, marginTop, 0, marginBottom))
 
@@ -125,6 +123,7 @@ class MainWindow(QMainWindow):
             self.currentPixmap = pix
             self.zoneMapWidget.setPixmap(pix)
             self.zoneMapWidget.setScaledContents(True)
+            self.resizeZoneMap()
             self.currentZone = i
         return showZoneMapHandler
 
