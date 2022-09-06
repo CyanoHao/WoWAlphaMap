@@ -46,20 +46,32 @@ def resourcePath(relative):
 
 
 class ZoneMapWidget(QLabel):
-    def __init__(self, parentLayout):
+    def __init__(self, mainWindow):
         super().__init__()
-        self.parentLayout = parentLayout
+        self.mainWindow = mainWindow
 
     def mouseReleaseEvent(self, event):
         if event.button() == Qt.RightButton:
-            self.parentLayout.setCurrentIndex(0)
+            self.mainWindow.mainLayout.setCurrentIndex(0)
+
+    def wheelEvent(self, event):
+        if event.angleDelta().y() > 0:
+            self.mainWindow.mainWindowOpacity += 0.05
+            if self.mainWindow.mainWindowOpacity > 1:
+                self.mainWindow.mainWindowOpacity = 1
+        else:
+            self.mainWindow.mainWindowOpacity -= 0.05
+            if self.mainWindow.mainWindowOpacity < 0.2:
+                self.mainWindow.mainWindowOpacity = 0.2
+        self.mainWindow.setWindowOpacity(self.mainWindow.mainWindowOpacity)
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle('WoW Beta Map')
-        self.setWindowOpacity(0.6)
+        self.mainWindowOpacity = 0.6
+        self.setWindowOpacity(self.mainWindowOpacity)
         self.resize(QSize(720, 480))
 
         windowFlags = self.windowFlags()
@@ -82,7 +94,7 @@ class MainWindow(QMainWindow):
         self.currentZone = -1
         self.currentPixmap: Optional[QPixmap] = None
 
-        zoneMapWidget = ZoneMapWidget(mainLayout)
+        zoneMapWidget = ZoneMapWidget(self)
         zoneMapWidget.setSizePolicy(QSizePolicy(
             QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Ignored))
         self.zoneMapWidget = zoneMapWidget

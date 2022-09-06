@@ -4,9 +4,18 @@ Temporary workaround until world map localization is complete.
 
 ## Usage
 
-Left click: show zone map.
-Right click: back to zone list.
-Windows + Down Arrow: minimize window. (system shortcut)
+In zone list view:
+* Left click: show zone map.
+
+In zone map view:
+* Right click: back to zone list.
+* Wheel up/down: increase/decrease opacity by 5%. (default: 60%, minimum: 20%, maximum: 100%)
+
+Hint:
+* Windows user may use “Windows + Down Arrow” system shortcut to minimize window.
+* Wayland user may run with `./WoWBetaMap -platform xbc` to force xwayland mode.
+
+![Use case](./repo/use-case.jpg)
 
 ## Development
 
