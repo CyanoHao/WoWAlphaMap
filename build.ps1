@@ -1,1 +1,1 @@
-pyinstaller --onefile --windowed --add-data gallery;gallery --name WoWBetaMap main.py
+pyinstaller --onefile --windowed --add-data "gallery;gallery" --name WoWBetaMap main.py

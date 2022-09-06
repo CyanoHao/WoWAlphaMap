@@ -18,8 +18,8 @@ Windows + Down Arrow: minimize window. (system shortcut)
    ```
    or on Windows
    ```powershell
-   python3 -m venv venv
-   .\venv\bin\Activate.ps1
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
    pip install -r requirements.txt
    ```
 1. Activate virtual environment on Unix
@@ -32,7 +32,7 @@ Windows + Down Arrow: minimize window. (system shortcut)
    ```
 1. Run
    ```bash
-   python3 main.py
+   python main.py
    ```
    or build an app on Unix
    ```bash
