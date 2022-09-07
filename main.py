@@ -28,13 +28,21 @@ zones = [
         'path': 'gallery/valdrakken.jpg',
     },
     {
+        'name': 'Dragon Isles',
+        'path': 'gallery/dragonisles.jpg',
+    },
+    {
+        'name': 'Uldaman 1',
+        'path': 'gallery/uldaman_upres_a.scaled.jpg',
+    },
+    {
+        'name': 'Uldaman 2',
+        'path': 'gallery/uldaman_upres_b.scaled.jpg',
+    },
+    {
         'name': 'The Forbidden Reach',
         'path': 'gallery/theforbiddenreach.merged.jpg',
     },
-    {
-        'name': 'Dragon Isles',
-        'path': 'gallery/dragonisles.jpg',
-    }
 ]
 
 
