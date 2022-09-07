@@ -6,14 +6,19 @@ Temporary workaround until world map localization is complete.
 
 In zone list view:
 * Left click: show zone map.
+* Right click: show zone map that is transparent to mouse/keyboard input.
+* Wheel up/down: increase/decrease opacity by 5%.
 
-In zone map view:
+In normal zone map view:
 * Right click: back to zone list.
-* Wheel up/down: increase/decrease opacity by 5%. (default: 60%, minimum: 20%, maximum: 100%)
+* Wheel up/down: increase/decrease opacity by 5%.
+
+In transparent zone map view:
+* Close window: back to zone list. You may close it in window switching UI (Alt+Tab).
 
 Hint:
 * Windows user may use “Windows + Down Arrow” system shortcut to minimize window.
-* Wayland user may run with `./WoWBetaMap -platform xbc` to force xwayland mode.
+* Wayland user may run with `./WoWBetaMap -platform xcb` to force Xwayland mode.
 
 ![Use case](./repo/use-case.jpg)
 
@@ -37,7 +42,7 @@ Hint:
    ```
    or on Windows
    ```powershell
-   .\venv\bin\Activate.ps1
+   .\venv\Scripts\Activate.ps1
    ```
 1. Run
    ```bash
