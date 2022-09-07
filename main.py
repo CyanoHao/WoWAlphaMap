@@ -73,7 +73,6 @@ class TransparentMapWidget(QLabel):
             QSizePolicy.Policy.Ignored, QSizePolicy.Policy.Ignored))
         self.zoneMapWidget = zoneMapWidget
 
-        print(imagePath)
         pix = QPixmap(resourcePath(imagePath))
         self.zoneMapWidget.setPixmap(pix)
         self.zoneMapWidget.setScaledContents(True)
@@ -83,7 +82,10 @@ class TransparentMapWidget(QLabel):
         self.show()
 
     def closeEvent(self, event) -> None:
-        self.mainWindow.show()
+        mainWindow = self.mainWindow
+        mainWindow.show()
+        mainWindow.restoreGeometry(self.saveGeometry())
+        self.deleteLater()
         return super().closeEvent(event)
 
     def resizeZoneMap(self):
